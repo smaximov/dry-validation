@@ -147,6 +147,7 @@ module Dry
         case config.messages
         when :yaml then Messages.default
         when :i18n then Messages::I18n.new
+        when :no_op then Messages::NoOp.new
         else
           raise "+#{config.messages}+ is not a valid messages identifier"
         end
